@@ -1,9 +1,11 @@
 # Unified Data Schema Specification (`window.BOOK_DATA`)
 
-All data files in `e:\sex\data\` attach their payload onto `window.BOOK_DATA = window.BOOK_DATA || {};` using plain UTF-8 JavaScript (NO ES module `import`/`export`, so `index.html` works both via direct `file:///` double-click and via HTTP server!).
+All data files in `data/` (`data/book_init.js` + `data/modules/m01…m17_*.js`, loaded in that order by `index.html`) attach their payload onto `window.BOOK_DATA = window.BOOK_DATA || {};` using plain UTF-8 JavaScript (NO ES module `import`/`export`, so `index.html` works both via direct `file:///` double-click and via HTTP server!).
 
 ## Chapter Object Structure
-Each chapter in `window.BOOK_DATA.chapters` (array or keyed registration via `window.BOOK_DATA.registerChapters([...])`) MUST follow this exact schema:
+Each chapter in `window.BOOK_DATA.chapters` (registered via `window.BOOK_DATA.registerChapters([...])`; later sections of a long chapter are added from a separate file with `window.BOOK_DATA.appendSections(chapterId, [...])`) MUST follow this exact schema.
+
+There are no image fields: the repo ships no `assets/` folder and the reader renders no images. Every module must pass `node --check <file>` (a single unclosed string once silently dropped section e1-s7).
 
 ```js
 {
@@ -15,7 +17,6 @@ Each chapter in `window.BOOK_DATA.chapters` (array or keyed registration via `wi
   englishTitle: "The Sexual Aberrations",
   year: "1905首发 · 1924定本",
   readingMinutes: 12,
-  heroImage: "assets/images/ch1_aberrations.png", // Assigned per chapter
   epigraph: {
     quote: "从精神分析的角度来看，哪怕最乖张的性变态里，也藏着一段人性的心理重塑过程。",
     source: "西格蒙德·弗洛伊德《性学三论》第一篇"
@@ -71,7 +72,7 @@ Each chapter in `window.BOOK_DATA.chapters` (array or keyed registration via `wi
 ```
 
 
-## Additional Global Data Collections (in `part3_love_morality_atlas.js`)
+## Additional Global Data Collections (in `data/modules/m15_glossary.js`, `m16_thinkers_scorecard.js`, `m17_timeline.js`)
 
 ### 1. `window.BOOK_DATA.registerGlossary([...])`
 ```js

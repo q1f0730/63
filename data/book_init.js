@@ -7,9 +7,7 @@ window.BOOK_DATA = {
     author: "西格蒙德·弗洛伊德 (Sigmund Freud)",
     translator: "徐胤（德文直译）",
     introAuthor: "李银河（导读）",
-    publisher: "浙江文艺出版社 · 果麦经典 (1905首发 / 1924定本 / 2015汉译)",
-    coverImage: "assets/images/cover.jpeg",
-    signatureImage: "assets/images/li_yinhe_signature.jpg"
+    publisher: "浙江文艺出版社 · 果麦经典 (1905首发 / 1924定本 / 2015汉译)"
   },
   chapters: [],
   glossary: [],
