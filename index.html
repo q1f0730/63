@@ -2,22 +2,25 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FFFFFF" />
   <title>性学三论 — Sigmund Freud (1905) · 现代精简与跨学科重读</title>
-  <meta name="description" content="弗洛伊德《性学三论》（徐胤德文直译本·李银河导读）纯白极简沉浸式互动网页书：由浅入深精简导读、内嵌拓扑交互模型与120年现代脑科学实证对照。" />
+  <meta name="description" content="弗洛伊德《性学三论》（徐胤德文直译本·李银河导读）纯白极简互动网页书：分页翻读的现代精简导读、原典摘录、内嵌交互模型与 120 年科学实证对照。" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- 2px Obsidian Reading Depth Progress Line -->
-  <div class="scroll-progress-line" id="scroll-progress-line"></div>
+  <!-- Chapter progress hairline (reader only) -->
+  <div class="scroll-progress-line" id="scroll-progress-line" aria-hidden="true"></div>
 
-  <!-- Main Stage (Prologue or Asymmetric Chapter Reader) -->
+  <!-- One view at a time: 读书 (home) · 阅读 (reader) · 图谱 (atlas) · 进度 (progress) -->
   <div id="monolith-app"></div>
 
-  <!-- Full-Viewport Catalogue & Cross-Disciplinary Knowledge Atlas Overlay (Stitch Screen 3) -->
-  <div class="atlas-overlay" id="atlas-overlay" aria-hidden="true"></div>
+  <!-- Secondary layers (excerpts, notes, terms, figures) open here as their own sheet -->
+  <div id="sheet-root"></div>
 
-  <!-- Complete Scholarly Book Data + Atelier Monolith Interactive Schematics + App Engine -->
+  <noscript><p style="padding:24px;font-family:sans-serif">本网页书需要启用 JavaScript。</p></noscript>
+
+  <!-- Book data + interactive figures + app engine (plain scripts: works from file:// double-click) -->
   <script src="data/book_init.js"></script>
   <script src="data/modules/m01_intro_li.js"></script>
   <script src="data/modules/m02_preface_1920.js"></script>

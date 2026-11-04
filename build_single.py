@@ -40,17 +40,19 @@ def main():
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FFFFFF" />
   <title>性学三论 — Sigmund Freud (1905) · 现代精简与跨学科重读</title>
-  <meta name="description" content="弗洛伊德《性学三论》（徐胤德文直译本·李银河导读）纯白极简沉浸式互动网页书：由浅入深精简导读、内嵌拓扑交互模型与120年现代脑科学实证对照。" />
+  <meta name="description" content="弗洛伊德《性学三论》（徐胤德文直译本·李银河导读）纯白极简互动网页书：分页翻读的现代精简导读、原典摘录、内嵌交互模型与 120 年科学实证对照。" />
   <style>
 {css_content}
   </style>
 </head>
 <body>
-  <div class="scroll-progress-line" id="scroll-progress-line"></div>
+  <div class="scroll-progress-line" id="scroll-progress-line" aria-hidden="true"></div>
   <div id="monolith-app"></div>
-  <div class="atlas-overlay" id="atlas-overlay" aria-hidden="true"></div>
+  <div id="sheet-root"></div>
+  <noscript><p style="padding:24px;font-family:sans-serif">本网页书需要启用 JavaScript。</p></noscript>
   <script>
 {all_js}
   </script>
